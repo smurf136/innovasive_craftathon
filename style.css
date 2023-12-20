@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: lightgreen;
+}
+
+div.first {
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+div.second {
+  width: 50;
+  background-color: red;
+}
+
+div.timeline {
+  width: 4px;
+  height: 100vh;
+  background-color: yellow;
+  margin: 0 auto;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  div.container .first:nth-child(odd) .second:nth-child(even) {
+    display: none;
+  }
+  div.container .first:nth-child(even) .second:nth-child(odd) {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  div.container .first:nth-child(odd) .second:nth-child(even) {
+    display: none;
+  }
+  div.container .first:nth-child(even) .second:nth-child(odd) {
+    display: none;
+  }
+}
